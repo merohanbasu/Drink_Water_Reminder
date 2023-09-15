@@ -3,9 +3,23 @@ import plyer
 
 def reminder():
 
-    # Display message
+    # display salutation
+    hour = int(time.strftime('%H'))
+    if (hour >= 3 and hour < 12):
+        message = "Good Morning Rohan, its time to drink some water....Stay hydrated"
+    elif (hour >= 12 and hour < 18):
+        message = "Good Afternoon Rohan, its time to drink some water....Stay hydrated"
+    elif (hour >= 18 and hour < 21):
+        message = "Good Evening Rohan, its time to drink some water....Stay hydrated"
+    elif (hour >= 21 and hour <= 24):
+        message = "Rohan, its time to drink some water....Stay hydrated Good Night"
+    elif (hour >= 0 and hour < 3):
+        message = "Rohan, its time to drink some water....Stay hydrated Good Night"
+
+    # Display title
     title = "Drink Water Reminder"
-    message = "Rohan, its time to drink some water....Stay hydrated"
+
+
     # generation of notification
     plyer.notification.notify(
         title = title,
